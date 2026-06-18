@@ -1,0 +1,10 @@
+kind create cluster
+kind get clusters
+kubectl cluster-info --context kind-kind
+kubectl --context kind-kind get nodes --output wide
+kind get kubeconfig
+
+curl -sL https://github.com/google/go-containerregistry/releases/latest/download/go-containerregistry_Linux_x86_64.tar.gz | sudo tar xz -C /usr/local/bin crane
+
+kind load image-archive /tmp/prometheus.tar
+kubectl get endpointslices.discovery.k8s.io
